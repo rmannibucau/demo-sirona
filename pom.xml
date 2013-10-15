@@ -31,36 +31,24 @@
     -->
     <dependency>
       <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-core</artifactId>
+      <version>${sirona.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
       <artifactId>commons-monitoring-cdi</artifactId>
       <version>${sirona.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.commons.monitoring</groupId>
-          <artifactId>commons-monitoring-core</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.commons.monitoring</groupId>
       <artifactId>commons-monitoring-jta</artifactId>
       <version>${sirona.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.commons.monitoring</groupId>
-          <artifactId>commons-monitoring-core</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.commons.monitoring</groupId>
       <artifactId>commons-monitoring-web</artifactId>
       <version>${sirona.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.commons.monitoring</groupId>
-          <artifactId>commons-monitoring-core</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.commons.monitoring</groupId>
@@ -94,6 +82,15 @@
             <lib>org.apache.commons.monitoring:commons-monitoring-jdbc:${sirona.version}</lib>
             <lib>org.apache.commons.monitoring:commons-monitoring-core:${sirona.version}</lib>
           </libs>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
     </plugins>
