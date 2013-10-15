@@ -113,6 +113,10 @@
       <id>xa</id>
       <url>http://repository.atosworldline.com/nexus/content/repositories/xa/</url>
     </repository>
+    <repository>
+      <id>xa-snapshots</id>
+      <url>http://repository.atosworldline.com/nexus/content/repositories/xa-snapshots/</url>
+    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
