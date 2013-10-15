@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.worldline</groupId>
+  <artifactId>demo-sirona</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.openejb</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0-5</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- rm plugin -->
+    <dependency>
+      <groupId>net.atos.xa.rm</groupId>
+      <artifactId>xa-rm-monitoring</artifactId>
+      <version>3.4.0-SNAPSHOT</version>
+    </dependency>
+
+    <!-- sirona -->
+    <!--
+    Note: core module is excluded since provided in the container for jdbc need
+    we could reuse resources.xml to provide everything
+    -->
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-cdi</artifactId>
+      <version>${sirona.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.commons.monitoring</groupId>
+          <artifactId>commons-monitoring-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-jta</artifactId>
+      <version>${sirona.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.commons.monitoring</groupId>
+          <artifactId>commons-monitoring-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-web</artifactId>
+      <version>${sirona.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.commons.monitoring</groupId>
+          <artifactId>commons-monitoring-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-reporting</artifactId>
+      <version>${sirona.version}</version>
+      <classifier>classes</classifier>
+    </dependency>
+
+    <!-- debug -->
+    <dependency>
+      <groupId>org.apache.openejb</groupId>
+      <artifactId>openejb-core</artifactId>
+      <version>4.6.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.openejb.maven</groupId>
+        <artifactId>tomee-maven-plugin</artifactId>
+        <version>1.6.0-SNAPSHOT</version>
+        <configuration>
+          <simpleLog>true</simpleLog>
+          <context>ROOT</context>
+          <libs>
+            <lib>net.atos.xa.tomcat:awl-tomcat-components:1.1.1-SNAPSHOT</lib>
+            <lib>net.worldline.sdco.plugin:wl-environment-plugin-api:1.0</lib>
+
+            <lib>org.apache.commons.monitoring:commons-monitoring-jdbc:${sirona.version}</lib>
+            <lib>org.apache.commons.monitoring:commons-monitoring-core:${sirona.version}</lib>
+          </libs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <sirona.version>1.0-SNAPSHOT</sirona.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>xa</id>
+      <url>http://repository.atosworldline.com/nexus/content/repositories/xa/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>xa</id>
+      <url>http://repository.atosworldline.com/nexus/content/repositories/xa/</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
