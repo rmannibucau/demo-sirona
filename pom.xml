@@ -52,6 +52,11 @@
     </dependency>
     <dependency>
       <groupId>org.apache.commons.monitoring</groupId>
+      <artifactId>commons-monitoring-cube</artifactId>
+      <version>${sirona.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons.monitoring</groupId>
       <artifactId>commons-monitoring-reporting</artifactId>
       <version>${sirona.version}</version>
       <classifier>classes</classifier>
@@ -82,6 +87,7 @@
             <lib>org.apache.commons.monitoring:commons-monitoring-jdbc:${sirona.version}</lib>
             <lib>org.apache.commons.monitoring:commons-monitoring-core:${sirona.version}</lib>
           </libs>
+          <tomeeClassifier>jaxrs</tomeeClassifier>
         </configuration>
       </plugin>
 

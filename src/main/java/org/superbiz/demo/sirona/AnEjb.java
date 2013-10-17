@@ -11,21 +11,17 @@ import javax.persistence.PersistenceContext;
 @Singleton
 @Startup
 @Lock(LockType.READ)
-
-// added by configuration
-//@JTAMonitored
-//@Monitored
 public class AnEjb {
     @PersistenceContext(unitName = "pu")
     private EntityManager em;
 
     // just to trigger some work regularly and create commit activity
     @Schedule(hour = "*", minute = "*", second = "*")
-    public void doNothing() {
+    public void scheduledMethod() {
         // no-op
     }
 
-    public void useJdbc() {
+    public void findOne() {
         em.find(AnEntity.class, 1); // just to use jdbc
     }
 }
