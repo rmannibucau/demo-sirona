@@ -18,11 +18,13 @@
     </dependency>
 
     <!-- rm plugin -->
+    <!--
     <dependency>
       <groupId>net.atos.xa.rm</groupId>
       <artifactId>xa-rm-monitoring</artifactId>
       <version>3.4.0-SNAPSHOT</version>
     </dependency>
+    -->
 
     <!-- sirona -->
     <!--
