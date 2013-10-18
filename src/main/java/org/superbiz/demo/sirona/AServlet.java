@@ -32,6 +32,6 @@ public class AServlet extends HttpServlet {
         resp.setStatus(200);
         resp.getWriter().write("Servlet!");
 
-        bean.useJdbc();
+        bean.findOne();
     }
 }
