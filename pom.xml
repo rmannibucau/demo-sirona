@@ -27,10 +27,6 @@
     -->
 
     <!-- sirona -->
-    <!--
-    Note: core module is excluded since provided in the container for jdbc need
-    we could reuse resources.xml to provide everything
-    -->
     <dependency>
       <groupId>org.apache.sirona</groupId>
       <artifactId>sirona-core</artifactId>
