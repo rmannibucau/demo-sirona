@@ -80,6 +80,19 @@
     </plugins>
   </build>
 
+  <repositories>
+    <repository>
+      <id>apache-snapshot</id>
+      <url>http://repository.apache.org/snapshots/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>apache-snapshot</id>
+      <url>http://repository.apache.org/snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
   <properties>
     <sirona.version>0.1-incubating-SNAPSHOT</sirona.version>
 
