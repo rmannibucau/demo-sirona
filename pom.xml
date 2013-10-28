@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.worldline</groupId>
+  <groupId>org.superbiz</groupId>
   <artifactId>demo-sirona</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -16,15 +16,6 @@
       <version>6.0-5</version>
       <scope>provided</scope>
     </dependency>
-
-    <!-- rm plugin -->
-    <!--
-    <dependency>
-      <groupId>net.atos.xa.rm</groupId>
-      <artifactId>xa-rm-monitoring</artifactId>
-      <version>3.4.0-SNAPSHOT</version>
-    </dependency>
-    -->
 
     <!-- sirona -->
     <dependency>
@@ -59,14 +50,6 @@
       <version>${sirona.version}</version>
       <classifier>classes</classifier>
     </dependency>
-
-    <!-- debug -->
-    <dependency>
-      <groupId>org.apache.openejb</groupId>
-      <artifactId>openejb-core</artifactId>
-      <version>4.6.0-SNAPSHOT</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -79,9 +62,6 @@
           <simpleLog>true</simpleLog>
           <context>ROOT</context>
           <libs>
-            <lib>net.atos.xa.tomcat:awl-tomcat-components:1.1.1-SNAPSHOT</lib>
-            <lib>net.worldline.sdco.plugin:wl-environment-plugin-api:1.0</lib>
-
             <lib>org.apache.sirona:sirona-jdbc:${sirona.version}</lib>
             <lib>org.apache.sirona:sirona-core:${sirona.version}</lib>
           </libs>
@@ -101,25 +81,8 @@
   </build>
 
   <properties>
-    <sirona.version>1.0-SNAPSHOT</sirona.version>
+    <sirona.version>0.1-incubating-SNAPSHOT</sirona.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>xa</id>
-      <url>http://repository.atosworldline.com/nexus/content/repositories/xa/</url>
-    </repository>
-    <repository>
-      <id>xa-snapshots</id>
-      <url>http://repository.atosworldline.com/nexus/content/repositories/xa-snapshots/</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>xa</id>
-      <url>http://repository.atosworldline.com/nexus/content/repositories/xa/</url>
-    </pluginRepository>
-  </pluginRepositories>
 </project>
