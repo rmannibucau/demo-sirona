@@ -32,34 +32,34 @@
     we could reuse resources.xml to provide everything
     -->
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-core</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-core</artifactId>
       <version>${sirona.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-cdi</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-cdi</artifactId>
       <version>${sirona.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-jta</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-jta</artifactId>
       <version>${sirona.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-web</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-web</artifactId>
       <version>${sirona.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-cube</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-cube</artifactId>
       <version>${sirona.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons.monitoring</groupId>
-      <artifactId>commons-monitoring-reporting</artifactId>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-reporting</artifactId>
       <version>${sirona.version}</version>
       <classifier>classes</classifier>
     </dependency>
@@ -86,8 +86,8 @@
             <lib>net.atos.xa.tomcat:awl-tomcat-components:1.1.1-SNAPSHOT</lib>
             <lib>net.worldline.sdco.plugin:wl-environment-plugin-api:1.0</lib>
 
-            <lib>org.apache.commons.monitoring:commons-monitoring-jdbc:${sirona.version}</lib>
-            <lib>org.apache.commons.monitoring:commons-monitoring-core:${sirona.version}</lib>
+            <lib>org.apache.sirona:sirona-jdbc:${sirona.version}</lib>
+            <lib>org.apache.sirona:sirona-core:${sirona.version}</lib>
           </libs>
           <tomeeClassifier>jaxrs</tomeeClassifier>
         </configuration>
