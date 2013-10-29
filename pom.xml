@@ -26,6 +26,11 @@
     </dependency>
     <dependency>
       <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-jpa</artifactId>
+      <version>${sirona.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sirona</groupId>
       <artifactId>sirona-cdi</artifactId>
       <version>${sirona.version}</version>
     </dependency>
