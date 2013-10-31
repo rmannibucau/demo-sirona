@@ -22,7 +22,11 @@
       <groupId>org.apache.sirona</groupId>
       <artifactId>sirona-core</artifactId>
       <version>${sirona.version}</version>
-      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sirona</groupId>
+      <artifactId>sirona-jdbc</artifactId>
+      <version>${sirona.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.sirona</groupId>
@@ -66,10 +70,6 @@
         <configuration>
           <simpleLog>true</simpleLog>
           <context>ROOT</context>
-          <libs>
-            <lib>org.apache.sirona:sirona-jdbc:${sirona.version}</lib>
-            <lib>org.apache.sirona:sirona-core:${sirona.version}</lib>
-          </libs>
           <tomeeClassifier>jaxrs</tomeeClassifier>
         </configuration>
       </plugin>
