@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <resources>
   <Resource id="jdbc/demo">
-    JdbcDriver = org.apache.sirona.jdbc.MonitoringDriver
-    JdbcUrl = jdbc:monitoring:hsqldb:mem:db?delegateDriver=org.hsqldb.jdbcDriver
+    JdbcDriver = org.apache.sirona.jdbc.SironaDriver
+    JdbcUrl = jdbc:sirona:hsqldb:mem:db?delegateDriver=org.hsqldb.jdbcDriver
 
     Username = sa
     Password =
